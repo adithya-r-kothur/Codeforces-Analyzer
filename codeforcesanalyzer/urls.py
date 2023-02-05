@@ -25,4 +25,7 @@ urlpatterns = [
     path('compare', views.compare, name='compare'),
     path('suggest', views.suggest, name='suggest'),
     path('login', views.login, name='login'),
+    path('compare2', views.compare2, name='compare2'),
+
+
 ]

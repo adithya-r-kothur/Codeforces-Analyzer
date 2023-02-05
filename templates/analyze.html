@@ -21,9 +21,7 @@
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/compare">Compare</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/analyze">Analyze</a>
-        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/login">Login</a>
         </li>
@@ -45,30 +43,22 @@
 <br>
 <br>
 
-<h2>
-    <center>
+
+<div class='row mb-3 justify-content-center'>
+  <div class='col-auto'>
+    <div class='row justify-content-center border border-dark rounded shadow p-2 bg-white'>
+      <div class='col-auto my-auto'>
+        <img class='img-fluid' src="{{titlephoto}}" alt={{handle}} />
+      </div>
+      <div class='col-auto my-auto'>
+        <h5>{{handle}} ({{rank}})</h5>
+        <h6>Rating: {{rating}} (Max: {{maxrating}})</h6>
 
 
-    <img src="{{titlephoto}}">
-    <br>
-    Handle -{{handle}}
-    </center>
-
-  <br>
-  Firstname -{{ firstname }}
-  <br>
-  rating -{{rating}}
-  <br>
-  MaxRating -{{maxrating}}
-  <br>
-  Rank -{{rank}}
-  <br>
-  Country -{{country}}
-  <br>
-
-
-
-</h2>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
