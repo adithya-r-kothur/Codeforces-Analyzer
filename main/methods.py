@@ -15,3 +15,5 @@ def userDetails(codeforcesHandle):
         return False
 
     return codeforcesHandle['result'][0]
+
+
