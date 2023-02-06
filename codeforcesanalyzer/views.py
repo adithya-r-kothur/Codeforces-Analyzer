@@ -22,7 +22,8 @@ def analyze(request):
     jsonData = url.json()
     data = json.dumps(jsonData)
     codeforcesHandle = json.loads(data)
-    url1 = requests.get('https://codeforces.com/api/user.status?handle=' + userhandle)
+    url1 = requests.get(
+        'https://codeforces.com/api/user.status?handle=' + userhandle)
     jsonData1 = url1.json()
     data1 = json.dumps(jsonData1)
 
@@ -63,7 +64,8 @@ def compare2(request):
         return False
     user1 = codeforcesHandle1['result'][0]
 
-    url12 = requests.get('https://codeforces.com/api/user.status?handle=' + userhandle1)
+    url12 = requests.get(
+        'https://codeforces.com/api/user.status?handle=' + userhandle1)
     jsonData12 = url12.json()
     data12 = json.dumps(jsonData12)
 
@@ -89,7 +91,8 @@ def compare2(request):
         return False
     user2 = codeforcesHandle2['result'][0]
 
-    url22 = requests.get('https://codeforces.com/api/user.status?handle=' + userhandle2)
+    url22 = requests.get(
+        'https://codeforces.com/api/user.status?handle=' + userhandle2)
     jsonData22 = url22.json()
     data22 = json.dumps(jsonData22)
 
@@ -106,9 +109,9 @@ def compare2(request):
             wrong2 = wrong2 + 1
 
     param1 = {'handle1': user1['handle'], 'rating1': user1['rating'], 'user1': user1, 'rank1': user1['rank'],
-              'maxrating1': user1['maxRating'], 'titlephoto1': user1['titlePhoto'], 'avatar1': user1['avatar'],'right1': count1, 'wrong1': wrong1,
+              'maxrating1': user1['maxRating'], 'titlephoto1': user1['titlePhoto'], 'avatar1': user1['avatar'], 'right1': count1, 'wrong1': wrong1,
               'handle2': user2['handle'], 'rating2': user2['rating'], 'user2': user2, 'rank2': user2['rank'],
-              'maxrating2': user2['maxRating'], 'titlephoto2': user2['titlePhoto'], 'avatar2': user2['avatar'],'right2': count2, 'wrong2': wrong2}
+              'maxrating2': user2['maxRating'], 'titlephoto2': user2['titlePhoto'], 'avatar2': user2['avatar'], 'right2': count2, 'wrong2': wrong2}
 
     return render(request, 'compare2.html', param1)
 
