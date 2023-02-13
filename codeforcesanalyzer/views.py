@@ -109,9 +109,11 @@ def compare2(request):
             wrong2 = wrong2 + 1
 
     param1 = {'handle1': user1['handle'], 'rating1': user1['rating'], 'user1': user1, 'rank1': user1['rank'],
-              'maxrating1': user1['maxRating'], 'titlephoto1': user1['titlePhoto'], 'avatar1': user1['avatar'], 'right1': count1, 'wrong1': wrong1,
+              'maxrating1': user1['maxRating'], 'titlephoto1': user1['titlePhoto'], 'avatar1': user1['avatar'],
+              'right1': count1, 'wrong1': wrong1,
               'handle2': user2['handle'], 'rating2': user2['rating'], 'user2': user2, 'rank2': user2['rank'],
-              'maxrating2': user2['maxRating'], 'titlephoto2': user2['titlePhoto'], 'avatar2': user2['avatar'], 'right2': count2, 'wrong2': wrong2}
+              'maxrating2': user2['maxRating'], 'titlephoto2': user2['titlePhoto'], 'avatar2': user2['avatar'],
+              'right2': count2, 'wrong2': wrong2}
 
     return render(request, 'compare2.html', param1)
 
@@ -122,3 +124,7 @@ def compare(request):
 
 def suggest(request):
     return render(request, 'suggest.html')
+
+
+def contest(request):
+    return render(request, 'contest.html')
