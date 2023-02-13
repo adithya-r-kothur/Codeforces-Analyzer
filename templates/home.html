@@ -10,7 +10,70 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css">
   </head>
+  <style>
+
+  section:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+}
+section {
+    min-height: 100vh;
+    font-size: x-large;
+}
+    footer{
+    position:relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: 50;
+    width: 98.8vw;
+    padding-top: 0px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content h3{
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+
+
+.footer-bottom{
+    background: #000;
+    width: 98.8vw;
+    padding: 10px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.footer-bottom p{
+    float: left;
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+ }
+ .footer-bottom p a{
+   color:#44bae8;
+   font-size: 16px;
+   text-decoration: none;
+ }
+ .footer-bottom span{
+     text-transform: uppercase;
+     opacity: .4;
+     font-weight: 200;
+ }
+  </style>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
@@ -83,5 +146,23 @@
         <br />
       </form>
     </center>
+
+    <section>
+    </section>
+
+  <footer>
+        <div class="footer-content">
+            <!--add all information -->
+            <center><h3>Adithya r kothur</h3></center>
+
+
+        </div>
+
+        <div class="footer-bottom">
+            <!-- add all information -->
+            <p>copyright &copy;2021 <a href="#">adithyarkothur</a>  </p>
+         </div>
+
+    </footer>
   </body>
 </html>
