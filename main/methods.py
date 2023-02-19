@@ -51,15 +51,27 @@ def submissioncalc(userhandle):
 
     submissions = json.loads(data1)
     submissions = submissions['result']
-    count = 0
-    wrong = 0
+    right = 0
+    rte = 0
+    ce = 0
+    tle = 0
+    other = 0
+    o=0
     print(len(submissions))
     for problem in submissions:
         if problem['verdict'] == "OK":
-            count = count + 1
+            right = right + 1
+        elif problem['verdict'] == "COMPILATION_ERROR":
+            ce = ce + 1
+        elif problem['verdict'] == "RUNTIME_ERROR":
+            rte = rte + 1
+        elif problem['verdict'] == "TIME_LIMIT_EXCEEDED":
+            tle = tle + 1
+        elif problem['verdict'] == "WRONG_ANSWER":
+            other = other + 1
         else:
-            wrong = wrong + 1
-    ans = [wrong, count]
+            o=o+1
+    ans = [right, ce, rte, tle, other,o]
     return ans
 
 

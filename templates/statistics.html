@@ -10,6 +10,29 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['right',     11],
+          ['wrong',      2],
+
+        ]);
+
+        var options = {
+          title: 'submissions'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
   </head>
   <style>
 header{
@@ -132,6 +155,8 @@ section {
       </div>
     </nav>
     <h1>This is Statistics page</h1>
+
+  <center>  <div id="piechart" style="width: 900px; height: 500px;"></div></center>
   <section></section>
   <footer>
         <div class="footer-content">

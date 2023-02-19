@@ -10,7 +10,33 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Accepted',     {{right}}],
+          ['Compile error',      {{ce}}],
+          ['Runtime error',      {{rte}}],
+          ['Time limit exceded',      {{tle}}],
+          ['Wrong answer',      {{other}}],
+
+
+        ]);
+
+        var options = {
+          title: 'submissions'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
   </head>
   <style>
 header{
@@ -133,7 +159,7 @@ section {
         </div>
       </div>
     </nav>
-    <h1>This is Aanlyze page</h1>
+
     <br />
     <br />
     <br />
@@ -149,13 +175,13 @@ section {
           <div class="col-auto my-auto">
             <h5>{{handle}} ({{rank}})</h5>
             <h6>Rating: {{rating}} (Max: {{maxrating}})</h6>
-            <h6>Submitted:{{wrong}}</h6>
+            <h6>Submitted:{{other}}</h6>
             <h6>Accepted:{{right}}</h6>
           </div>
         </div>
       </div>
     </div>
-
+      <center>  <div id="piechart" style="width: 900px; height: 500px;"></div></center>
     <section></section>
   <footer>
         <div class="footer-content">

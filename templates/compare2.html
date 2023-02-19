@@ -10,6 +10,64 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Accepted',     {{right1}}],
+          ['Compile error',      {{ce1}}],
+          ['Runtime error',      {{rte1}}],
+          ['Time limit exceded',      {{tle1}}],
+          ['Wrong answer',      {{other1}}],
+
+
+        ]);
+
+        var options = {
+          title: 'submissions'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Accepted',     {{right2}}],
+          ['Compile error',      {{ce2}}],
+          ['Runtime error',      {{rte2}}],
+          ['Time limit exceded',      {{tle2}}],
+          ['Wrong answer',      {{other2}}],
+
+
+        ]);
+
+        var options = {
+          title: 'submissions'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+
   </head>
   <style>
 header{
@@ -23,6 +81,20 @@ header h1{
 }
   section:nth-child(even) {
     background-color: rgb(255, 255, 255);
+}
+
+
+.compare1 {
+    width: 50%;
+    float: left;
+    padding: 20px;
+
+}
+.compare2{
+width: 50%;
+    float: right;
+    padding: 20px;
+
 }
 section {
     min-height: 100vh;
@@ -85,6 +157,7 @@ section {
   <header>
     <h1>CODEFORCES ANALYZER</h1>
   </header>
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
 
@@ -131,11 +204,13 @@ section {
         </div>
       </div>
     </nav>
-    <h1>This is Compare page</h1>
-    <br />
-    <br />
-    <br />
 
+    <br />
+    <br />
+    <br />
+<section>
+    <div class="compare1-2">
+      <div class="compare1">
     <div class="row mb-3 justify-content-center">
       <div class="col-auto">
         <div
@@ -153,11 +228,14 @@ section {
         </div>
       </div>
     </div>
+    <center>  <div class="chart1" id="piechart" style="width: 700px; height: 450px;"></div></center>
     <br />
     <br />
     <br />
     <br />
     <br />
+        </div>
+      <div class="compare2">
     <div class="row mb-3 justify-content-center">
       <div class="col-auto">
         <div
@@ -175,6 +253,17 @@ section {
         </div>
       </div>
     </div>
+    <center><div class="chart2" id="piechart2" style="width: 700px; height: 450px;"></div></center>
+    <br/>
+    <br/>
+    <br/>
+        </div>
+  </div>
+</section>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
   <section></section>
   <footer>
         <div class="footer-content">
