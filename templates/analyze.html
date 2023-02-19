@@ -13,7 +13,15 @@
 
   </head>
   <style>
-
+header{
+    padding: 40px;
+    background-color: rgba(7, 7, 240, 0.726);
+}
+header h1{
+    text-align: center;
+    color: white;
+    background-color: rgba(25, 13, 192, 0);
+}
   section:nth-child(even) {
     background-color: rgb(255, 255, 255);
 }
@@ -76,9 +84,12 @@ section {
   </style>
 
   <body>
+  <header>
+    <h1>CODEFORCES ANALYZER</h1>
+  </header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Codeforces-analyzer</a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -106,9 +117,7 @@ section {
               >
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link" href="http://127.0.0.1:8000/login">Login</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="http://127.0.0.1:8000/suggest"
                 >Suggest</a
@@ -120,17 +129,7 @@ section {
               >
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+
         </div>
       </div>
     </nav>
