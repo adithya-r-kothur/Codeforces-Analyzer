@@ -21,7 +21,7 @@ def analyze(request):
     ce = submissioncalc(userhandle)[1]
     rte = submissioncalc(userhandle)[2]
     tle = submissioncalc(userhandle)[3]
-    other = submissioncalc(userhandle)[4]+submissioncalc(userhandle)[5]
+    other = submissioncalc(userhandle)[4] + submissioncalc(userhandle)[5]
 
     param = {'handle': user['handle'], 'rating': user['rating'], 'user': user, 'rank': user['rank'],
              'maxrating': user['maxRating'], 'titlephoto': user['titlePhoto'], 'avatar': user['avatar'],
@@ -30,7 +30,6 @@ def analyze(request):
 
 
 def suggestresults(request):
-
     return render(request, 'suggestresults.html')
 
 
@@ -72,3 +71,7 @@ def suggest(request):
 def contest(request):
     params = getcontestlist()
     return render(request, 'contest.html', params)
+
+
+def contact(request):
+    return render(request, 'contact.html')

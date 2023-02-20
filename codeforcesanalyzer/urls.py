@@ -26,6 +26,7 @@ urlpatterns = [
     path('suggest', views.suggest, name='suggest'),
     path('compare2', views.compare2, name='compare2'),
     path('contest', views.contest, name='contest'),
+    path('contact', views.contact, name='contact'),
 
 
 ]

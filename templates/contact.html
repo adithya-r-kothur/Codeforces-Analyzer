@@ -3,20 +3,73 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Suggest</title>
+    <title>Home</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-  </head>
-   <style>
 
-   .myspinner{
-   display:none;
-   }
-header{
+
+  </head>
+  <style>
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: none;
+  position: relative;
+  border: 3px solid;
+  border-color: #000 #000 transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #FF3D00 #FF3D00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #FFF #FFF transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+  header{
     padding: 40px;
     background-color: rgba(7, 7, 240, 0.726);
 }
@@ -25,6 +78,7 @@ header h1{
     color: white;
     background-color: rgba(25, 13, 192, 0);
 }
+
   section:nth-child(even) {
     background-color: rgb(255, 255, 255);
 }
@@ -58,7 +112,9 @@ section {
     line-height: 3rem;
 }
 
-
+.grey{
+  background: #fff;
+}
 
 .footer-bottom{
     background: #000;
@@ -89,6 +145,8 @@ section {
   <header>
     <h1>CODEFORCES ANALYZER</h1>
   </header>
+
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
       <div class="container-fluid">
 
@@ -141,40 +199,7 @@ section {
         </div>
       </div>
     </nav>
-    <h1>This is Suggest page</h1>
 
-      <h5>Page is under development please bear with us for more updates, please feel free to explore other pages.</h5>
-        <br/>
-        <br/>
-        <br/>
-    <center>
-    <form action="/suggestresults" method="get">
-      <h3>Enter your handel here:</h3>
-      <textarea name="texts" row="2" cols="50"></textarea>
-      <br/>
-
-      <button type="submit" class="btn btn-dark" id="suggestbutton">Suggest</button>
-    </form>
-    </center>
-    <br/>
-    <br/>
-    <script>
-      const button = document.getElementById("suggestbutton");
-      const spinner = document.getElementById("spinner");
-
-      button.addEventListener("click", () => {
-        spinner.style.display = "block";
-        });
-    </script>
-    <div id="spinner" class="myspinner">
-    <center>
-    <div class="spinner-border text-danger" role="status">
-        <span class="visually-hidden ">Loading...</span>
-    </div>
-    </center>
-    </div>
-
-  <section></section>
   <footer>
         <div class="footer-content">
             <!--add all information -->
