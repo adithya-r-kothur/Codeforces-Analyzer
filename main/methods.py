@@ -56,7 +56,7 @@ def submissioncalc(userhandle):
     ce = 0
     tle = 0
     other = 0
-    o=0
+    o = 0
     print(len(submissions))
     for problem in submissions:
         if problem['verdict'] == "OK":
@@ -70,8 +70,8 @@ def submissioncalc(userhandle):
         elif problem['verdict'] == "WRONG_ANSWER":
             other = other + 1
         else:
-            o=o+1
-    ans = [right, ce, rte, tle, other,o]
+            o = o + 1
+    ans = [right, ce, rte, tle, other, o]
     return ans
 
 
@@ -131,3 +131,8 @@ def getcontestlist():
     }
 
     return params
+
+
+def suggestions(userhandle):
+    questions = []
+

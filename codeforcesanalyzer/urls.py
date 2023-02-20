@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('analyze', views.analyze, name='analyze'),
-    path('statistics', views.statistics, name='statistics'),
+    path('suggestresults', views.suggestresults, name='suggestresults'),
     path('compare', views.compare, name='compare'),
     path('suggest', views.suggest, name='suggest'),
     path('compare2', views.compare2, name='compare2'),

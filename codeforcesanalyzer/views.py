@@ -29,8 +29,9 @@ def analyze(request):
     return render(request, 'analyze.html', param)
 
 
-def statistics(request):
-    return render(request, 'statistics.html')
+def suggestresults(request):
+
+    return render(request, 'suggestresults.html')
 
 
 def compare2(request):
