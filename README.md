@@ -2,7 +2,7 @@
 
 try it out here
 
-https://adithya-r-kothur.github.io/Codeforces-Analyzer/templates/home.html
+https://codeforces-analyzer.vercel.app/
 
 # HOME PAGE
 
