@@ -29,10 +29,6 @@ def analyze(request):
     return render(request, 'analyze.html', param)
 
 
-def suggestresults(request):
-    return render(request, 'suggestresults.html')
-
-
 def compare2(request):
     userhandle1 = request.GET.get('text1', 'default')
     user1 = userDetails(userhandle1)
@@ -71,6 +67,23 @@ def suggest(request):
 def contest(request):
     params = getcontestlist()
     return render(request, 'contest.html', params)
+
+
+def suggestresults(request):
+    currrarting = request.GET.get('currating', 'default')
+    currrarting = int(currrarting)
+    arating = request.GET.get('arating', 'default')
+    arating = int(arating)
+
+    if arating < currrarting:
+        return HttpResponse(
+            "rating to be achieved should be more than current rating press the back button and enter proper rating")
+
+    delta = arating - currrarting
+
+
+
+    return render(request, 'suggestresults.html')
 
 
 def contact(request):

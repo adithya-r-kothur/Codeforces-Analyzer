@@ -141,20 +141,25 @@ section {
         </div>
       </div>
     </nav>
-    <h1>This is Suggest page</h1>
-
-      <h5>Page is under development please bear with us for more updates, please feel free to explore other pages.</h5>
-        <br/>
-        <br/>
-        <br/>
+    <br>
+    <br>
+  <center><h2>This page suggests you questions to solve to improve your rating </h2></center>
+    <br>
+    <br>
     <center>
     <form action="/suggestresults" method="get">
-      <h3>Enter your handel here:</h3>
-      <textarea name="texts" row="2" cols="50"></textarea>
-      <br/>
-
+      <h3>Current rating </h3>
+      <textarea datatype="integer" name="currating" row="2" cols="50"></textarea>
+      <br>
+      <br>
+      <br>
+      <h3>Rating you want to achieve </h3>
+      <textarea datatype="integer" name="arating" row="2" cols="50"></textarea>
+      <br>
       <button type="submit" class="btn btn-dark" id="suggestbutton">Suggest</button>
     </form>
+
+
     </center>
     <br/>
     <br/>
